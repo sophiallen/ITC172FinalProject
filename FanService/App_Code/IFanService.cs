@@ -34,7 +34,10 @@ public interface IFanService
     bool AddFanArtist(int fanKey, string artistName);
 
     [OperationContract]
-    List<Artist> GetFanArtists(int fanKey);
+    List<string> GetFanArtists(int fanKey);
+
+    [OperationContract]
+    List<ShowsPerArtist> GetFanShows(int fanKey);
 
 }
 

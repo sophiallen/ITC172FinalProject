@@ -121,18 +121,19 @@ public class FanService : IFanService
     }
 
     //getfanartists is still in progress.... :/
-    public List<Artist> GetFanArtists(int fanKey)
+    public List<string> GetFanArtists(int fanKey)
     {
-        var fan = (from f in db.Fans
-                   where f.FanKey.Equals(fanKey)
-                   select f).First();
-        List<Artist> artistList = new List<Artist>();
 
-        foreach (var a in fan.Artists)
+
+        var fanartists = (from f in db.Fans
+                          from a in f.Artists
+                          where f.FanKey.Equals(fanKey)
+                          select new { a.ArtistName });
+        List<string> artistList = new List<string>();
+        foreach (var ar in fanartists)
         {
-            artistList.Add(a);
+            artistList.Add(ar.ArtistName);
         }
-
         return artistList;
     }
 
@@ -164,6 +165,21 @@ public class FanService : IFanService
         return result;
     }
 
+    public List<ShowsPerArtist> GetFanShows(int fanKey)
+    {
+        List<string> fanArtists = GetFanArtists(fanKey);
+        List<ShowsPerArtist> showList = new List<ShowsPerArtist>();
+        foreach(var ar in fanArtists)
+        {
+            List<ShowsPerArtist> artistshows = GetArtistShows(ar);
+            foreach(var s in artistshows)
+            {
+                showList.Add(s);
+            }
+        }
+
+        return showList;
+    }
 
 }
 
