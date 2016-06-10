@@ -1,0 +1,91 @@
+﻿html {
+    background-color: whitesmoke;
+    font-family: 'Work Sans', sans-serif;
+}
+
+body {
+    width: 78%;
+    margin: 50px auto;
+    font-family: 'Work Sans', sans-serif;
+    background-color: white;
+    box-shadow:0px 0 10px 1px rgba(51,51,51,.3);
+}
+h1 {
+    background-color: #00BCD4;
+    padding: 5%;
+    margin:0;
+    text-align:center;
+}
+
+div[id] {
+    width: 29%;
+    border: 2px solid rgba(158,158,158,0.4);
+    padding: 10px;
+    margin: .75em;
+    display:inline-block;
+    height: 355px;
+    vertical-align: top;
+}
+
+#logIn, #register {
+    display: block;
+    background-color: antiquewhite;
+    width:50%;
+    margin: 10px auto;
+    height: 200px;
+}
+#register {
+    height: 300px;
+}
+#ShowDropDownList {
+    margin-top: 20px;
+}
+th {
+    background-color: #00BCD4;
+}
+th, td {
+    padding: 5px;
+    /*text-align:center;*/
+}
+
+table.fanpage td {
+    width: 50%;
+    vertical-align: top;
+}
+
+div.inner {
+    width: 90%;
+    margin: 2em auto;
+    padding-bottom: 3em;
+}
+
+table.fanpage {
+    width: 90%;
+    margin: 3em auto;
+}
+
+form {
+    padding-bottom:2em;
+}
+
+#ShowGridView {
+    width: 50%;
+    margin: 20px auto;
+}
+
+select, input {
+    font-size: 1em;
+    font-family: Garamond, Georgia, sans-serif;
+}
+#ArtistDropDownList {
+    width:40%;
+}
+
+#ArtistCheckBoxList td {
+    width: 25%;
+    padding: 1em;
+}
+
+#Calendar1 {
+    margin: 0 auto;
+}
