@@ -73,6 +73,9 @@ public class ShowsPerArtist
 
     [DataMember]
     public string ArtistVenueName { set; get; }
+    
+    [DataMember]
+    public string ArtistName { set; get; }
 }
 
 public class ArtistNames
