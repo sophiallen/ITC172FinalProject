@@ -96,7 +96,7 @@ public class Service : IService
         var spa = from s in db.Shows
                   from sd in s.ShowDetails
                   where sd.Artist.ArtistName.Equals(artist)
-                  select new { s.Venue.VenueName, s.ShowName, s.ShowDate, s.ShowTime };
+                  select new {sd.Artist.ArtistName, s.Venue.VenueName, s.ShowName, s.ShowDate, s.ShowTime };
 
         List<ShowsPerArtist> artistShows = new List<ShowsPerArtist>();
 
@@ -107,6 +107,7 @@ public class Service : IService
             sPERa.ArtistShowTime = shows.ShowTime.ToString();
             sPERa.ArtistShowDate = shows.ShowDate.ToShortDateString();
             sPERa.ArtistVenueName = shows.VenueName;
+            sPERa.ArtistName = shows.ArtistName;
 
             artistShows.Add(sPERa);
 
